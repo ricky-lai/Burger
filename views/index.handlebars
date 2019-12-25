@@ -1,0 +1,85 @@
+<div class=container>
+    <div class="row">
+        <div class="col-md-12">
+            <img src="/assets/img/burger.png" class="img-responsive center-block" id="burger-img"
+                alt="Responsive image">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center" id="burger-h">Eat-Da-Burger!</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+
+        <div class="col-md-5 uneaten-list">
+            {{#each burger}}
+            {{#unless this.devoured}}
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="panel panel-default">
+                        <div class="burger-text panel-body">
+                            {{this.id}}. {{this.burger_name}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <form action="/{{this.id}}?_method=PUT" method="POST">
+                        <input type="hidden" name="devoured" value="true">
+                        <button type="submit" class="burger-btn btn btn-success">Devour it!</button>
+                    </form>
+                </div>
+            </div>
+            {{/unless}}
+            {{/each}}
+        </div>
+
+        <div class="col-md-3 eaten-list">
+            {{#each burger}}
+            {{#if this.devoured}}
+            <div class="panel panel-default">
+                <div class="burger-text panel-body" id="devoured-text">
+                    {{this.id}}. {{this.burger_name}}
+                </div>
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
+
+        <div class="col-md-2">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+
+        <div class="col-md-6">
+            <form class="create-update-form" action="/" method="POST">
+                <div class="form-group">
+                    <label class="burger-text control-label" for="focusedInput">Your burger:</label>
+                    <input class="burger-text form-control" id="focusedInput" type="text" placeholder="Burger order..."
+                        name="burger_name">
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="burger-btn btn btn-warning center-block">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-3">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p class="burger-text text-center">Enter a burger you want to eat, then click the "Submit" button.</p>
+        </div>
+    </div>
+</div>

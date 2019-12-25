@@ -1,0 +1,39 @@
+/*Changing the background color*/
+body {
+	background: #29abe0;
+}
+
+/*Formatting the burger img*/
+#burger-img {
+	max-width: 200px;
+	margin-top: 20px;
+}
+
+
+/*Applying Google fonts*/
+#burger-h {
+	font-family: 'Ravi Prakash', cursive;
+	font-size: 60px;
+}
+
+.burger-text {
+	font-family: 'Rock Salt', cursive;
+}
+
+.burger-btn {
+	font-family: 'Rock Salt', cursive;
+}
+
+
+/*"Muting" the devoured burgers*/
+#devoured-text {
+	color: #98978b;
+	background-color: #f8f5f0
+}
+
+
+/*Formatting the divs holding burger lists*/
+.uneaten-list, .eaten-list {
+	max-height: 300px;
+	overflow-y:auto;
+}
